@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,23 +37,96 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'AULA',
+          'Cartão de Crédito',
         ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: Container(
-        color: Colors.redAccent,
-        padding: EdgeInsets.only(top: 100.0),
-        width: 550,
-        height: 550,
-        margin: EdgeInsets.only(top: 50),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(250),
-          child: Image.network(
-            'https://acdn.mitiendanube.com/stores/002/213/761/products/mesa-stone-li-0560-ambientada-21-f321046a6543f2397b16871955802629-1024-1024.jpg',
-            fit: BoxFit.cover,
-            height: 250,
-            width: 250,
+      body: Center(
+        child: Container(
+          height: 200,
+          width: 350,
+          child: Stack(
+            children: [
+              Container(
+                height: 180,
+                width: 330,
+                decoration: BoxDecoration(
+                    gradient: const LinearGradient(colors: [
+                      Color.fromARGB(255, 43, 255, 0),
+                      Color.fromARGB(255, 255, 0, 0),
+                    ]),
+                    borderRadius: BorderRadius.circular(15)),
+              ),
+              Positioned(
+                top: 10,
+                right: 30,
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 63, 99, 255),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+              const Positioned(
+                top: 25,
+                left: 15,
+                child: Text(
+                  "Nikolas Railan",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              const Positioned(
+                top: 75,
+                left: 15,
+                child: Text(
+                  "Instituto Federal do Paraná",
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
+              ),
+              const Positioned(
+                top: 95,
+                left: 15,
+                child: Text(
+                  "Campus Paranaguá",
+                  style: TextStyle(color: Colors.white, fontSize: 10),
+                ),
+              ),
+              const Positioned(
+                  bottom: 35,
+                  left: 15,
+                  child: Icon(
+                    Icons.phone,
+                    color: Colors.white,
+                  )),
+              const Positioned(
+                bottom: 35,
+                left: 45,
+                child: Text(
+                  "+55 41 98899-8877",
+                  style: TextStyle(color: Colors.white, fontSize: 13),
+                ),
+              ),
+              const Positioned(
+                  bottom: 35,
+                  right: 160,
+                  child: Icon(
+                    Icons.email,
+                    color: Colors.white,
+                  )),
+              const Positioned(
+                bottom: 35,
+                right: 25,
+                child: Text(
+                  "email123@gmail.com",
+                  style: TextStyle(color: Colors.white, fontSize: 13),
+                ),
+              )
+            ],
           ),
         ),
       ),
